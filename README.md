@@ -18,3 +18,7 @@ the PINGS column is the output of `ping -c 1 $IP &>/dev/null; echo $?`
 1 = bad
 2 = worse
 68 = something else
+
+### Parallel
+  this one is WIP and not really complete for the moment,  but it is
+there, and much faster.

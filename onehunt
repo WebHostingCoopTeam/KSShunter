@@ -1,0 +1,7 @@
+#!/bin/bash
+echo $1
+THIS_NAME=$1
+DIG1=$(dig $THIS_NAME +short|head -n1)
+DIG2=$(dig -x $DIG1 +short|head -n1)
+PINGS=$(ping -c 1 $DIG1> /dev/null 2>/dev/null; echo $?)
+echo $THIS_NAME,$PINGS,$DIG1,$DIG2
