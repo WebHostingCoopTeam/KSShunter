@@ -1,0 +1,16 @@
+#!/bin/bash
+PRE_KSS=$(cat PRE_KSS)
+POST_KSS=$(cat POST_KSS)
+x=$(cat LOWER_NUM)
+END=$(cat UPPER_NUM)
+echo HOSTNAME,IP,PTR > diggit
+while [ $x -le $END ]
+do
+    THIS_NUM=$(printf "%03d" $x)
+    THIS_NAME=$(echo $PRE_KSS$THIS_NUM$POST_KSS)
+    echo "$THIS_NAME"
+    DIG1=$(dig $PRE_KSS$THIS_NUM$POST_KSS +short)
+    DIG2=$(dig -x $DIG1 +short)
+    echo $THIS_NAME,$DIG1,$DIG2>> diggit
+      x=$(( $x + 1 ))
+done
