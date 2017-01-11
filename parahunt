@@ -14,6 +14,6 @@ do
       x=$(( $x + 1 ))
 done
 
-/usr/bin/time parallel --jobs 100 -- < $TMP/working.sh
+/usr/bin/time parallel --jobs 225 -- < $TMP/working.sh
 cp $TMP/diggit.csv ./para-diggit.csv
 rm -Rf $TMP
