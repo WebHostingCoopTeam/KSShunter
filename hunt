@@ -9,8 +9,8 @@ do
     THIS_NUM=$(printf "%03d" $x)
     THIS_NAME=$(echo $PRE_KSS$THIS_NUM$POST_KSS)
     echo "$THIS_NAME"
-    DIG1=$(dig $PRE_KSS$THIS_NUM$POST_KSS +short)
-    DIG2=$(dig -x $DIG1 +short)
+    DIG1=$(dig $PRE_KSS$THIS_NUM$POST_KSS +short|head -n1)
+    DIG2=$(dig -x $DIG1 +short|head -n1)
     PINGS=$(ping -c 1 $DIG1> /dev/null 2>/dev/null; echo $?)
     echo $THIS_NAME,$PINGS,$DIG1,$DIG2>> diggit.csv
       x=$(( $x + 1 ))
