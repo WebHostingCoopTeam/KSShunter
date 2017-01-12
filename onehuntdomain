@@ -2,5 +2,6 @@
 THIS_NAME=$1
 DIG1=$(dig $THIS_NAME +short|head -n1)
 DIG2=$(dig -x $DIG1 +short|head -n1)
+DOMAIN=`expr "$DIG2" | sed -n 's/[^.]*\.//p'`
 PINGS=$(ping -W 7 -c 1 $DIG1> /dev/null 2>/dev/null; echo $?)
-echo $THIS_NAME,$PINGS,$DIG1,$DIG2
+echo $THIS_NAME,$PINGS,$DIG1,$DIG2,$DOMAIN
