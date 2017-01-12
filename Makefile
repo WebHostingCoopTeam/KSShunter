@@ -32,10 +32,15 @@ diggit.csv:
 para-diggit.csv:
 	./parahunt
 
-test: both sorted.diggit.csv diff
+test: rm both sorted.diggit.csv diff
 
 sorted.diggit.csv: para-diggit.csv
 	sort -n para-diggit.csv > sorted.diggit.csv
 
 diff: sorted.diggit.csv diggit.csv
 	diff sorted.diggit.csv diggit.csv
+
+rm:
+	rm diggit.csv
+	rm para-diggit.csv
+	rm sorted.diggit.csv

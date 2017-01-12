@@ -1,7 +1,7 @@
 # KSShunter
 KSShunter
 
-`make h`
+`make p`
 
 you will be prompted for a lower number, upper number and a PRE_KSS and
 POST_KSS
@@ -19,16 +19,19 @@ the PINGS column is the output of `ping -c 1 $IP &>/dev/null; echo $?`
 2 = worse
 68 = something else
 
-### Parallel
-  this one is WIP and not really complete for the moment,  but it is
-there, and much faster. EDIT: seems to be working much better now,
-continue testing
+###### GNU Parallel
+
+This repo uses [GNU parallel](https://www.gnu.org/software/parallel/)
+you should too!
 
 ```
-make p
+  O. Tange (2011): GNU Parallel - The Command-Line Power Tool,
+    ;login: The USENIX Magazine, February 2011:42-47.
 ```
 
 ### Testing
+
+to test whether the parallel is the same as the iterative
 
 ```
 make test
