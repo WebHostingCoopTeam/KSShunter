@@ -21,4 +21,15 @@ the PINGS column is the output of `ping -c 1 $IP &>/dev/null; echo $?`
 
 ### Parallel
   this one is WIP and not really complete for the moment,  but it is
-there, and much faster.
+there, and much faster. EDIT: seems to be working much better now,
+continue testing
+
+```
+make p
+```
+
+### Testing
+
+```
+make test
+```

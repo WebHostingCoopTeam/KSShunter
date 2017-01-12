@@ -18,8 +18,24 @@ LOWER_NUM:
 		read -r -p "Enter the LOWER_NUM Address you wish to assign to this container (de_lake) [LOWER_NUM]: " LOWER_NUM; echo "$$LOWER_NUM">>LOWER_NUM; cat LOWER_NUM; \
 	done ;
 
-h: LOWER_NUM UPPER_NUM PRE_KSS POST_KSS
+reqs: LOWER_NUM UPPER_NUM PRE_KSS POST_KSS
+
+h: reqs diggit.csv
+
+p: reqs para-diggit.csv
+
+both: diggit.csv para-diggit.csv
+
+diggit.csv:
 	./hunt
 
-p: LOWER_NUM UPPER_NUM PRE_KSS POST_KSS
+para-diggit.csv:
 	./parahunt
+
+test: both sorted.diggit.csv diff
+
+sorted.diggit.csv: para-diggit.csv
+	sort -n para-diggit.csv > sorted.diggit.csv
+
+diff: sorted.diggit.csv diggit.csv
+	diff sorted.diggit.csv diggit.csv
