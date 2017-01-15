@@ -36,12 +36,6 @@ node {
             echo 'prune and cleanup'
             sh 'make clean'
 
-            mail body: 'project build successful',
-                        from: 'xxxx@yyyyy.com',
-                        replyTo: 'xxxx@yyyy.com',
-                        subject: 'project build successful',
-                        to: 'yyyyy@yyyy.com'
-
         }
 
 
@@ -49,11 +43,6 @@ node {
 
         currentBuild.result = "FAILURE"
 
-            mail body: "project build error is here: ${env.BUILD_URL}" ,
-            from: 'xxxx@yyyy.com',
-            replyTo: 'yyyy@yyyy.com',
-            subject: 'project build failed',
-            to: 'zzzz@yyyyy.com'
 
         throw err
     }
