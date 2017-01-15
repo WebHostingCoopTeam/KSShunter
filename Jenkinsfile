@@ -29,7 +29,7 @@ node {
             sh './dockerPushToRepo.sh'
 
             echo 'ssh to web server and tell it to pull new image'
-            sh 'ssh deploy@xxxxx.xxxxx.com running/xxxxxxx/dockerRun.sh'
+            sh 'ssh coopadmin@192.168.133.88 /usr/local/bin/dockerRun.sh'
 
        stage 'Cleanup'
 
