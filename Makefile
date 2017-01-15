@@ -47,3 +47,5 @@ rm:
 
 show:
 	echo showtime
+
+clean: rm
