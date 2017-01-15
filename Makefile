@@ -44,3 +44,6 @@ rm:
 	rm diggit.csv
 	rm para-diggit.csv
 	rm sorted.diggit.csv
+
+show:
+	echo showtime
