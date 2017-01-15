@@ -41,9 +41,9 @@ diff: sorted.diggit.csv diggit.csv
 	diff sorted.diggit.csv diggit.csv
 
 rm:
-	rm diggit.csv
-	rm para-diggit.csv
-	rm sorted.diggit.csv
+	rm -f diggit.csv
+	rm -f para-diggit.csv
+	rm -f sorted.diggit.csv
 
 show:
 	echo showtime
