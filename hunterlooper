@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mysql -e "SELECT ip_address, hostname FROM mytable;" | while read ip_address hostname; do
+# use $theme_name and $guid variables
+echo "$ip_address, $hostname"
+done
